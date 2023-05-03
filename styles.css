@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(87.5deg, #13315c 30%, #42286f 100%);
+    color: white;
+    font-family: 'Outifit', sans-serif;
+}
+
+.nav-left h1{
+    color: white;
+    text-decoration: none;
+}
+
+.nav{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    backdrop-filter: blur(10px);
+}
+
+.nav-left{
+    margin-right: 10px;
+    padding: 50px;
+    width: 25%;
+}
+
+.nav-right{
+    position: sticky;
+    width: 75%;
+    margin-top: 40px;
+}
+
+.nav-right ul{
+    display: flex;
+    gap: 45px;
+    position: absolute;
+    right: 2em;
+    margin-right: 15px;
+}
+
+.nav-right li{
+    list-style: none;
+}
+
+
+.nav-right a{
+    text-decoration: none;
+    color: #CCD6F6;
+    font-size: 15px;
+    font-family: 'Roboto Mono', sans-serif;
+    transition: 2s;
+}
+
+.nav-right a:hover{
+    color: #ff6464;
+}
+
+button{
+    padding: 10px;
+    color: #ff6464;
+    transform: translateY(-10px);
+    background-color: transparent;
+    border: 1.5px solid #ff6464;
+    transition: 100ms;
+    border-radius: 5px;
+    transition: 100ms;
+}
+
+button:hover{
+    box-shadow: 5px 5px 0 0 #ff6464;
+    transition: 100ms ease-in-out;
+}
+
+.section{
+    display: flex;
+}
+
+.social{
+    position: fixed;
+    left: 40px;
+    bottom: 0px;
+    width: 2px;
+    height: 100px;
+    background-color: #CCD6F6;
+    border-radius: 10px;
+}
+
+.logos{
+    position: fixed;
+    left: 40px;
+    margin-left: 30px;
+    padding: 50px 0 40px 0;
+}
+
+.main{
+    margin-left: 100px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    height: 75vh;
+}
+
+.main h3{
+    color: #ff6464;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 200;
+    margin-bottom: 10px;
+    margin: 5px;
+}
+
+.main h1{
+    font-size: clamp(40px, 8vw, 80px);
+    color: #CCD6F6;
+    margin: 5px;
+}
+
+.main h2{
+    color: #ccd6f6ae;
+    font-size: 50px;
+    margin: 5px;
+}
+
+.main p{
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #CCD6F6;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+.main button{
+    margin-top: 30px;
+    width: 200px;
+    height: 55px;
+}
+
+.about{
+    height: 100vh;
+    width: 100%;
+    transition: 2s;
+    overflow-y: scroll;
+}
+
+.experience{
+    height: 100vh;
+    width: 100%;
+    transition: 2s;
+    overflow-y: scroll;
+}
+
+.work{
+    height: 100vh;
+    width: 100%;
+    transition: 2s;
+    overflow-y: scroll;
+}
+
+.contact{
+    height: 100vh;
+    width: 100%;
+    transition: 2s;
+    overflow-y: scroll;
+}
