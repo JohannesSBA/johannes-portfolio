@@ -1,22 +1,75 @@
+/* defaults */
+
+:root{
+    --red: #ff6464;
+    --lightgrey: #CCD6F6;
+    --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+/* base */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    overflow-wrap: normal;
 }
 
 body{
     background: linear-gradient(87.5deg, #13315c 30%, #42286f 100%);
     color: white;
     font-family: 'Outifit', sans-serif;
+    overflow-x: hidden;
 }
+
 
 .background{
     position: absolute;
     z-index: -1;
 }
 
+
+/* left links section */
+
+.logo ul{
+    position: fixed;
+    bottom: 130px;
+    left: 28px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+
+#logos{
+    color: var(--lightgrey);
+    font-size: 2em;
+    transition: var(--transition);
+}
+
+#logos:hover{
+    color: #ff6464;
+    font-size: 2.3em;
+    transform: translateX(-3px);
+}
+
+.section{
+    display: flex;
+
+}
+
+.line{
+    position: fixed;
+    left: 40px;
+    bottom: 0px;
+    width: 2px;
+    height: 100px;
+    background-color: var(--lightgrey);
+    border-radius: 10px;
+}
+
+/* Navigation bar */
 .nav-left h1{
     color: white;
     text-decoration: none;
@@ -26,7 +79,6 @@ body{
     position: fixed;
     display: flex;
     z-index: 5;
-    width: 100%;
     height: 10vh;
     backdrop-filter: blur(10px);
     box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
@@ -35,12 +87,13 @@ body{
 .nav-left{
     margin-right: 10px;
     padding: 50px;
-    width: 25%;
+    width: 25vw;
+    overflow: hidden;
 }
 
 .nav-right{
     position: sticky;
-    width: 75%;
+    width: 75vw;
     margin-top: 40px;
 }
 
@@ -59,62 +112,46 @@ body{
 
 .nav-right a{
     text-decoration: none;
-    color: #CCD6F6;
+    color: var(--lightgrey);
     font-size: 15px;
     font-family: 'Roboto Mono', sans-serif;
     transition: 2s;
 }
 
 .nav-right a:hover{
-    color: #ff6464;
+    color: var(--red);
 }
 
 button{
     padding: 10px;
-    color: #ff6464;
+    color: var(--red);
     transform: translateY(-10px);
     background-color: transparent;
-    border: 1.5px solid #ff6464;
+    border: 1.5px solid var(--red);
     transition: 100ms;
     border-radius: 5px;
     transition: 100ms;
 }
 
 button:hover{
-    box-shadow: 5px 5px 0 0 #ff6464;
+    box-shadow: 5px 5px 0 0 var(--red);
     transition: 100ms ease-in-out;
 }
 
-.section{
-    display: flex;
 
-}
-
-.line{
-    position: fixed;
-    left: 40px;
-    bottom: 0px;
-    width: 2px;
-    height: 100px;
-    background-color: #CCD6F6;
-    border-radius: 10px;
-}
-
-
-
+/* Ladning page */
 .main{
-    position: relative;
-    left: 150px;
-    width: 90%;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
-    padding: 50px;
+    left: 20%;
     height: 100vh;
+    width: 100vw;
 }
 
 .main h3{
-    color: #ff6464;
+    color: var(--red);
     font-family: 'Roboto Mono', sans-serif;
     font-weight: 200;
     margin-bottom: 10px;
@@ -123,12 +160,12 @@ button:hover{
 
 .main h1{
     font-size: clamp(40px, 8vw, 80px);
-    color: #CCD6F6;
+    color: var(--lightgrey);
     margin: 5px;
 }
 
 .main h2{
-    color: #ccd6f6ae;
+    color: var(--lightgrey);
     font-size: 50px;
     margin: 5px;
 }
@@ -137,7 +174,7 @@ button:hover{
     max-width: 400px;
     margin-top: 30px;
     margin-bottom: 30px;
-    color: #CCD6F6;
+    color: var(--lightgrey);
     font-family: 'Roboto Mono', sans-serif;
 }
 
@@ -147,36 +184,20 @@ button:hover{
     height: 55px;
 }
 
-
-
-
-.about{
-    height: 100vh;
-    width: 100%;
-    transition: 2s;
-}
-
-.experience{
-    height: 100vh;
-    width: 100%;
-    transition: 2s;
-}
-
-.work{
-    height: 100vh;
-    width: 100%;
-    transition: 2s;
-}
-
-.contact{
-    height: 100vh;
-    width: 100%;
-    transition: 2s;
-}
-
+/* about section */
 .about{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    margin-top: 300px;
+}
+
+.about p{
+    width: 800px;
+    font-family: 'Roboto Mono', sans-serif;
+    position: absolute;
+    left: 10em;
+    margin-top: 50px;
+    color: var(--lightgrey);
 }
 
 .intro{
@@ -187,47 +208,46 @@ button:hover{
 }
 
 .intro h3{
-    color: #ff6464;
+    color: var(--red);
     font-family: 'Roboto Mono', sans-serif;
     font-weight: 200;
     margin-bottom: 10px;
     margin: 5px;
 }
 
+/* experiences section */
+
+.experience{
+    height: 100vh;
+    width: 100%;
+    transition: 2s;
+}
+
+/* work section */
+
+.work{
+    height: 100vh;
+    width: 100%;
+    transition: 2s;
+}
+
+/* contact section */
+
+.contact{
+    height: 100vh;
+    width: 100%;
+    transition: 2s;
+}
+
+
+
+
+/* reusables */
+
 .hor-line{
     height: 1px;
-    background-color: #ff6464;
+    background-color: var(--red);
     width: 400px;
     transform: translateY(17px);
 }
     
-
-
-
-
-
-.container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    -webkit-mask-image: url(#mask);
-    mask-image: url(#mask);
-  }
-
-.section img{
-    position: absolute;
-    width: 200px;
-    right: 20%;
-    bottom: 40%;
-    border-radius: 30px;
-    filter: grayscale(50);
-    transition: 1s linear;
-}
-
-.section img:hover{
-    transform: translate(-2px,-2px);
-    transition: 100ms linear;
-    filter: none;
-    
-}
-
