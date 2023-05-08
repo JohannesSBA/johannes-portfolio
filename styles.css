@@ -13,14 +13,84 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    border: 1px red solid;
 }
 
 body{
-    background: linear-gradient(364deg, #13315c 30%, #42286f 100%);
+    background: linear-gradient(to right, #13315c 10% , #42286f 100%);
     color: white;
     font-family: 'Outifit', sans-serif;
     overflow-x: hidden;
+
+}
+
+.anim{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    animation: slideOutContainer 4s;
+    animation-fill-mode: forwards;
+}
+
+.anim h1{
+    font-size: 76px;
+    font-family: 'Roboto Mono';
+    animation: disappear 4s;
+    animation-fill-mode: forwards;
+    letter-spacing: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+@keyframes slideOutContainer {
+    0%{
+        height: 100vh;
+    }
+    40%{
+        height: 100vh;
+    }
+    100%{
+        height: 0%;
+    }
+}
+
+@keyframes disappear{
+    0%{
+        opacity: 100%;
+    }
+    60%{
+        opacity: 60%;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+.sidebar{
+    width: 100vh;
+    position: absolute;
+    z-index: 6;
+    height: 100%;
+    background-color: black;
+    right: 100%;
+}
+
+.sidebar.active{
+    right: 0%;
+}
+
+.nav-right i{
+    position: relative;
+    display: none;
+    font-size: 2em;
+    z-index: 7;
 }
 
 
@@ -35,10 +105,17 @@ body{
 .section{
     position: fixed;
     width: 150px;
-    bottom: 0;
+    height: 7vh;
+    bottom: 8%;
 }
 
 .logo ul{
+    display: flex;
+    flex-direction: column-reverse;
+    width: max-content;
+    height: 150px;
+    transform: translate(27px,-110px);
+    list-style: none;
 }
 
 
@@ -84,7 +161,6 @@ body{
 .nav-left{
     margin-right: 10px;
     padding: 50px;
-    width: 25%;
     overflow: hidden;
 }
 
@@ -98,8 +174,7 @@ body{
 }
 
 .nav-right{
-    position: sticky;
-    width: 75%;
+    width: max-content;
     margin-top: 40px;
 }
 
@@ -152,18 +227,38 @@ button:hover{
     justify-content: center;
     left: 20%;
     height: 100vh;
-    width: 100%;
+    width: max-content;
 }
 
-.main h3{
+.h3Container{
+    display: inline-block;
+    width: max-content;
+}
+
+.text1{
     color: var(--red);
+    width: 100%;
     font-family: 'Roboto Mono', sans-serif;
     font-weight: 200;
-    margin-bottom: 10px;
-    margin: 5px;
+    border-right: solid 5px var(--red);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: cursor 0.4s infinite 2.5s, typing 2s steps(14) 2.5s;
 }
 
+@keyframes cursor{
+    50%{
+        border-color: transparent;
+    }
+}
+
+@keyframes typing{
+    from{width: 0;}
+}
+
+
 .main h1{
+    
     font-size: clamp(40px, 8vw, 80px);
     color: var(--lightgrey);
     margin: 5px;
@@ -175,7 +270,7 @@ button:hover{
     margin: 5px;
 }
 
-.main p{
+.desc{
     max-width: 400px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -230,6 +325,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     padding-top: 300px;
+    height: 100vh;
 }
 
 .about p{
@@ -293,7 +389,7 @@ button:hover{
 }
     
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 900px){
     .section{
         display: none;
     }
@@ -302,7 +398,23 @@ button:hover{
         overflow-x: hidden;
     }
 
-    .nav-right{
+    .nav-right li,
+    .nav-right button{
+        display: none;
+    }
+
+    #bars{
+        display: contents;
+    }
+
+}
+
+@media only screen and (max-width: 1400px){
+    .box{
+        display: none;
+    }
+
+    .home img{
         display: none;
     }
 }
